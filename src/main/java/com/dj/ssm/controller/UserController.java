@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
     
     String aa;
-    Integer bb;
+    Integer bb = 223;
 
     int v;
     double c;
