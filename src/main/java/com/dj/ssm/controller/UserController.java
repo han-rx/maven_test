@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     
-    String aa;
+    String aa = "zss";
     Integer bb;
 
     int v;
