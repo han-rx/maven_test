@@ -19,9 +19,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    
-    String aa;
+
     Integer bb = 223;
+    String aa = "zss";
 
     int v;
     double c;
