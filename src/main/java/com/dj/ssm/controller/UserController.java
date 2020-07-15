@@ -19,6 +19,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    
+    String aa;
+    Integer bb;
 
     @RequestMapping("show")
     public ResultModel show(UserQuery userQuery) {
