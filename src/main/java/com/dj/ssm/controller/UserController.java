@@ -20,6 +20,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    int v;
+    double c;
+
     @RequestMapping("show")
     public ResultModel show(UserQuery userQuery) {
         try {
