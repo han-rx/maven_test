@@ -23,6 +23,8 @@ public class UserController {
     Integer bb = 223;
     String aa = "zss";
 
+    String str;
+
     int v;
     double c;
 
