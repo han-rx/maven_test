@@ -25,6 +25,8 @@ public class UserController {
 
     int s;
 
+    String str;
+
     int v;
     double c;
 
