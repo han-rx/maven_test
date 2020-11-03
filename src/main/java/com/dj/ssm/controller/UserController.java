@@ -34,21 +34,21 @@ public class UserController {
     public ResultModel show(UserQuery userQuery) {
         try {
             Map<String, Object> m = new HashMap<>();
-            IPage<User> page =new Page<> (userQuery.getPageNo(),userQuery.getPageSize());
+            IPage<User> page = new Page<>(userQuery.getPageNo(), userQuery.getPageSize());
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            if(userQuery.getUserName() != null && userQuery.getUserName() != "" ){
-                queryWrapper.like("user_name",userQuery.getUserName());
+            if (userQuery.getUserName() != null && userQuery.getUserName() != "") {
+                queryWrapper.like("user_name", userQuery.getUserName());
             }
-            if(null != userQuery.getHobbys() && !userQuery.getHobbys().isEmpty()) {
-                queryWrapper.in("hobbys",userQuery.getHobbys());
+            if (null != userQuery.getHobbys() && !userQuery.getHobbys().isEmpty()) {
+                queryWrapper.in("hobbys", userQuery.getHobbys());
             }
-            if(userQuery.getMinAge() != null){
-                queryWrapper.or().ge("user_age",userQuery.getMinAge());
+            if (userQuery.getMinAge() != null) {
+                queryWrapper.or().ge("user_age", userQuery.getMinAge());
             }
-            if(userQuery.getMaxAge() != null){
-                queryWrapper.or().le("user_age",userQuery.getMaxAge());
+            if (userQuery.getMaxAge() != null) {
+                queryWrapper.or().le("user_age", userQuery.getMaxAge());
             }
-            IPage<User> pageInfo = userService.page(page,queryWrapper);
+            IPage<User> pageInfo = userService.page(page, queryWrapper);
             List<Map<String, Object>> list = new ArrayList<>();
             for (User u : pageInfo.getRecords()) {
                 Map<String, Object> map = new HashMap<>();
@@ -78,7 +78,7 @@ public class UserController {
             }
 //            m.put("userList", pageInfo.getRecords());
             m.put("pages", pageInfo.getPages());
-            m.put("m",list);
+            m.put("m", list);
             return new ResultModel().success(m);
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,7 +113,7 @@ public class UserController {
     public ResultModel add(UserQuery userQuery) {
         try {
             List<User> list = new ArrayList<>();
-            for (User u: userQuery.getList()) {
+            for (User u : userQuery.getList()) {
                 if (null == u.getUserName() || u.getUserName().equals("")) {
                     continue;
                 }

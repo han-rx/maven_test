@@ -1,9 +1,11 @@
-require(["jquery", "../.."], function($) {
+require(["jquery", "../.."], function ($) {
 
-	$.validator.setDefaults({
-		submitHandler: function() { alert("submitted!"); }
-	});
+    $.validator.setDefaults({
+        submitHandler: function () {
+            alert("submitted!");
+        }
+    });
 
-	// validate the comment form when it is submitted
-	$("#commentForm").validate();
+    // validate the comment form when it is submitted
+    $("#commentForm").validate();
 });
